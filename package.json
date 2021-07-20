@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanishqSingla/asmsc.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@assemblyscript/loader": "^0.16.1"
+  "bugs": {
+    "url": "https://github.com/TanishqSingla/asmsc/issues"
   },
-  "devDependencies": {
-    "assemblyscript": "^0.16.1"
-  }
+  "homepage": "https://github.com/TanishqSingla/asmsc#readme"
 }
