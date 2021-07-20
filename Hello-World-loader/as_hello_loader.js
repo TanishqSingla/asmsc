@@ -1,7 +1,7 @@
 const loader = require("@assemblyscript/loader");
 const fs = require("fs");
 
-let module;
+var module;
 
 const importObject = {
   as_hello: {
@@ -12,7 +12,7 @@ const importObject = {
 };
 
 (async () => {
-  let wasm = fs.readFileSync("as_hello.wasm");
+  let wasm = fs.readFileSync(__dirname + "/as_hello.wasm");
   module = await loader.instantiate(wasm, importObject);
   module.exports.HelloWorld();
 })();
