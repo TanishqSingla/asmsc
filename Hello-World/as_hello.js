@@ -25,9 +25,9 @@ let importObject = {
   },
 };
 
-(async () => {
+async () => {
   let obj = await WebAssembly.instantiate(new Uint8Array(bytes), importObject);
 
   memory = obj.instance.exports.memory;
   obj.instance.exports.HelloWorld();
-})();
+};
