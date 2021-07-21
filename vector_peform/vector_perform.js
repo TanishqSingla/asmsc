@@ -16,12 +16,12 @@ const loader = require("@assemblyscript/loader");
   // Direct call version
   let dVector2D = {
     init: function (x, y) {
-      return obj.instance.exports["Vector2D#constructor"](0, x, y);
+      return obj.instance.exports["Vector2D#constructor"](x, y);
     },
     getX: obj.instance.exports["Vector2D#get:x"],
     setX: obj.instance.exports["Vector2D#set:x"],
     getY: obj.instance.exports["Vector2D#get:y"],
-    getY: obj.instance.exports["Vector2D#set:y"],
+    setY: obj.instance.exports["Vector2D#set:y"],
     Magnitude: obj.instance.exports["Vector2D#Magnitude"],
     add: obj.instance.exports["Vector2D#add"],
   };
@@ -29,7 +29,7 @@ const loader = require("@assemblyscript/loader");
   // Direct call version
   let dVector3D = {
     init: function (x, y, z) {
-      return obj.instance.exports["Vector3D#constructor"](0, x, y, z);
+      return obj.instance.exports["Vector3D#constructor"](x, y, z);
     },
     getX: obj.instance.exports["Vector3D#get:x"],
     setX: obj.instance.exports["Vector3D#set:x"],
@@ -48,11 +48,11 @@ const loader = require("@assemblyscript/loader");
   let vec3_id = dVector3D.init(5, 6, 7);
 
   for (let i = 0; i < 1_000_000; i++) {
-    dVector2D.add(vec1_id, vec2_id);
+    dVector2D.add(vec1_id);
     dVector3D.setX(vec3_id, dVector3D.getX(vec3_id) + 10);
     dVector2D.setY(vec2_id, dVector2D.getY(vec2_id) + 1);
     dVector2D.Magnitude(vec2_id);
   }
 
-  console.log("direct time =" + new Date().getTime() - start_time_direct);
+  console.log("direct time =" + (new Date().getTime() - start_time_direct));
 })();
