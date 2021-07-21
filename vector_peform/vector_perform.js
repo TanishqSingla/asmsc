@@ -55,4 +55,21 @@ const loader = require("@assemblyscript/loader");
   }
 
   console.log("direct time =" + (new Date().getTime() - start_time_direct));
+
+  let { Vector2D, Vector3D } = await loader.demangle(module).exports;
+
+  let start_time_loader = new Date().getTime();
+
+  let vector1 = Vector2D(1, 2);
+  let vector2 = Vector2D(3, 4);
+  let vector3 = Vector3D(5, 6, 7);
+
+  for (let i = 0; i < 1_000_000; i++) {
+    vector1.add(vector2);
+    vector3.x += 10;
+    vector2.y++;
+    vector2.Magnitude();
+  }
+
+  console.log("loader time=" + (new Date().getTime() - start_time_loader));
 })();
