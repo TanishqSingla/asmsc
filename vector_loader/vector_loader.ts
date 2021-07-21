@@ -19,7 +19,7 @@ export class Vector2D {
 }
 
 export class Vector3D extends Vector2D {
-  z: f32,
+  z: f32;
 
   constructor(x: f32, y: f32, z: f32) {
     super(x, y);
@@ -27,11 +27,11 @@ export class Vector3D extends Vector2D {
   }
 
   Magnitude(): f32 {
-    return Mathf.sqrt(this.x * this.x + this.y * this.y + this.z * this.z); 
+    return Mathf.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
 
   add(vec3: Vector3D): Vector3D {
-    super.add(vec3)
+    super.add(vec3);
     this.z += vec3.z;
     return this;
   }
