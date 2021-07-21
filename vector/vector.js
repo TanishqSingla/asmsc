@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 (async () => {
-  let wasm = fs.readFileSync("vector.wasm");
+  let wasm = fs.readFileSync(__dirname + "/vector.wasm");
   let obj = await WebAssembly.instantiate(wasm, { env: { abort: () => {} } });
   let Vector2D = {
     init: function (x, y) {
