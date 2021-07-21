@@ -1,6 +1,6 @@
 export class Vector2D {
-  x: f32;
-  y: f32;
+  private x: f32;
+  private y: f32;
 
   constructor(x: f32, y: f32) {
     this.x = x;
@@ -8,6 +8,6 @@ export class Vector2D {
   }
 
   Magnitude(): f32 {
-    return Math.sqrt(this.x * this.x + this.y * this.y);
+    return Mathf.sqrt(this.x * this.x + this.y * this.y);
   }
 }
